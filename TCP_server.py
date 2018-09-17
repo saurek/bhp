@@ -1,7 +1,6 @@
 import socket
 import threading
 
-
 bind_ip = "0.0.0.0"
 bind_port = 9999
 
@@ -12,6 +11,7 @@ server.bind((bind_ip, bind_port))
 server.listen(5)
 
 print "[*] Listening on %s: %d" % (bind_ip, bind_port)
+
 
 # client handle thread
 def handle_client(client_socket):
@@ -25,8 +25,8 @@ def handle_client(client_socket):
 
     client.close()
 
-while True:
 
+while True:
     client, addr = server.accept()
 
     print "[*] Accepted connection from %s: %d" % (addr[0], addr[1])
